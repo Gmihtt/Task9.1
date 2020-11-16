@@ -1,0 +1,122 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: a858cc0358a7b84f460212552b5a9928a6f04baaedde7a45e61779ca2e081a82
+
+name:           multi-layer
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/multi-layer#readme>
+homepage:       https://github.com/githubuser/multi-layer#readme
+bug-reports:    https://github.com/githubuser/multi-layer/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/multi-layer
+
+library
+  exposed-modules:
+      Controller
+      Mongo
+      Redis
+      Repository
+      Service
+  other-modules:
+      Paths_multi_layer
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , blaze-html
+    , blaze-markup
+    , bytestring
+    , directory
+    , filepath
+    , hedis
+    , http-client
+    , http-media
+    , mongoDB
+    , mtl
+    , servant
+    , servant-client
+    , servant-server
+    , text
+    , time
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable multi-layer-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_multi_layer
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base
+    , blaze-html
+    , blaze-markup
+    , bytestring
+    , directory
+    , filepath
+    , hedis
+    , http-client
+    , http-media
+    , mongoDB
+    , mtl
+    , multi-layer
+    , servant
+    , servant-client
+    , servant-server
+    , text
+    , time
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite multi-layer-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_multi_layer
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base
+    , blaze-html
+    , blaze-markup
+    , bytestring
+    , directory
+    , filepath
+    , hedis
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-client
+    , http-media
+    , mongoDB
+    , mtl
+    , multi-layer
+    , servant
+    , servant-client
+    , servant-server
+    , text
+    , time
+    , wai
+    , warp
+  default-language: Haskell2010
